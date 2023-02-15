@@ -67,6 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
         referencia.appendChild(error);
     }
 
+    console.log("Hola")
+
     function limpiarAlerta(referencia) {
         const alerta = referencia.querySelector(".bg-red-600");
         if (alerta) {
