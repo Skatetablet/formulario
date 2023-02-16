@@ -15,35 +15,28 @@ document.addEventListener("DOMContentLoaded", function() {
         telefono: "",
         expediente:""
     }
+    let elementos = [
+    inputNombre = document.querySelector("#nombre"),
+    inputDesc = document.querySelector("#descripcion"),
+    inputEmpresa = document.querySelector("#empresa"),
+    inputIFE = document.querySelector("#ife"),
+    inputCURP = document.querySelector("#curp"),
+    inputRFC = document.querySelector("#rfc"),
+    inputSeguro = document.querySelector("#numSeguro"),
+    inputSangre = document.querySelector("#tipoSangre"),
+    inputLicencia = document.querySelector("#licencia"),
+    inputTipoLicencia = document.querySelector("#tipoLicencia"),
+    inputVigencia = document.querySelector("#vigenciaLicencia"),
+    inputTelefono = document.querySelector("#telefono"),
+    inputExpediente = document.querySelector("#expendiente"),
+    formulario = document.querySelector(".form"),
+    btnSubmit = document.querySelector(".form button[type='submit']"),
+    btnReset = document.querySelector(".form button[type='reset']")
+    ];
 
-    const inputNombre = document.querySelector("#nombre");
-    const inputDesc = document.querySelector("#descripcion");
-    const inputEmpresa = document.querySelector("#empresa");
-    const inputIFE = document.querySelector("#ife");
-    const inputCURP = document.querySelector("#curp");
-    const inputRFC = document.querySelector("#rfc");
-    const inputSeguro = document.querySelector("#numSeguro");
-    const inputSangre = document.querySelector("#tipoSangre");
-    const inputLicencia = document.querySelector("#licencia");
-    const inputTipoLicencia = document.querySelector("#tipoLicencia");
-    const inputVigencia = document.querySelector("#vigenciaLicencia");
-    const inputTelefono = document.querySelector("#telefono");
-    const inputExpediente = document.querySelector("#expendiente");
-    const formulario = document.querySelector(".form")
-    const btnSubmit = document.querySelector(".form button[type='submit']");
-    const btnReset = document.querySelector(".form button[type='reset']");
-
-    inputNombre.addEventListener("click", (validar));
-    inputDesc.addEventListener("click", (validar));
-    inputEmpresa.addEventListener("click", (validar));
-    inputIFE.addEventListener("click", (validar));
-    inputCURP.addEventListener("click", (validar));
-    inputRFC.addEventListener("click", (validar));
-    inputLicencia.addEventListener("click", (validar));
-    inputTipoLicencia.addEventListener("click", (validar));
-    inputVigencia.addEventListener("click", (validar));
-    inputTelefono.addEventListener("click", (validar));
-    inputExpediente.addEventListener("click", (validar));
+    elementos.forEach(item => {
+        item.addEventListener("click", validar)
+    });
 
 
     function validar(e) {
@@ -67,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function() {
         referencia.appendChild(error);
     }
 
-    console.log("Hola")
+    
 
     function limpiarAlerta(referencia) {
         const alerta = referencia.querySelector(".bg-red-600");
