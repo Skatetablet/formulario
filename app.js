@@ -15,28 +15,36 @@ document.addEventListener("DOMContentLoaded", function() {
         telefono: "",
         expediente:""
     }
+    
     let elementos = [
-    inputNombre = document.querySelector("#nombre"),
-    inputDesc = document.querySelector("#descripcion"),
-    inputEmpresa = document.querySelector("#empresa"),
-    inputIFE = document.querySelector("#ife"),
-    inputCURP = document.querySelector("#curp"),
-    inputRFC = document.querySelector("#rfc"),
-    inputSeguro = document.querySelector("#numSeguro"),
-    inputSangre = document.querySelector("#tipoSangre"),
-    inputLicencia = document.querySelector("#licencia"),
-    inputTipoLicencia = document.querySelector("#tipoLicencia"),
-    inputVigencia = document.querySelector("#vigenciaLicencia"),
-    inputTelefono = document.querySelector("#telefono"),
-    inputExpediente = document.querySelector("#expendiente"),
-    formulario = document.querySelector(".form"),
-    btnSubmit = document.querySelector(".form button[type='submit']"),
-    btnReset = document.querySelector(".form button[type='reset']")
+        inputNombre = document.querySelector("#nombre"),
+        inputDesc = document.querySelector("#descripcion"),
+        inputEmpresa = document.querySelector("#empresa"),
+        inputIFE = document.querySelector("#ife"),
+        inputCURP = document.querySelector("#curp"),
+        inputRFC = document.querySelector("#rfc"),
+        inputSeguro = document.querySelector("#numSeguro"),
+        inputSangre = document.querySelector("#tipoSangre"),
+        inputLicencia = document.querySelector("#licencia"),
+        inputTipoLicencia = document.querySelector("#tipoLicencia"),
+        inputVigencia = document.querySelector("#vigenciaLicencia"),
+        inputTelefono = document.querySelector("#telefono"),
+        inputExpediente = document.querySelector("#expendiente"),
+        formulario = document.querySelector(".form"),
+        btnSubmit = document.querySelector(".form button[type='submit']"),
+        btnReset = document.querySelector(".form button[type='reset']")
+        
     ];
 
     elementos.forEach(item => {
-        item.addEventListener("click", validar)
+        item.addEventListener("click", validar);
     });
+
+    btnReset.addEventListener("click", function(e) {
+        e.preventDefault();
+        reiniciarForm();
+    })
+
 
 
     function validar(e) {
@@ -67,5 +75,10 @@ document.addEventListener("DOMContentLoaded", function() {
         if (alerta) {
             alerta.remove();
         }
+    }
+
+    function reiniciarForm() {
+        
+        formulario.reset();
     }
 })
